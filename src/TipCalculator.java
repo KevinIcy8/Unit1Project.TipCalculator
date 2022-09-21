@@ -1,5 +1,7 @@
 import java.util.Scanner;
+import java.text.DecimalFormat;
 public class TipCalculator {
+    public static final DecimalFormat df = new DecimalFormat("0.00");
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         // user input variables
@@ -17,14 +19,15 @@ public class TipCalculator {
         float tipPerPerson = roundedTotalTip/numberOfPeople;
         float roundedTipPerPerson = (float)Math.round(tipPerPerson*100)/100;
         float totalBillPerPerson = totalBillWithTip/numberOfPeople;
-        float roundedBillPerPerson = (float)Math.round(totalBillPerPerson*100/100);
+        float roundedBillPerPerson = (float)Math.round(totalBillPerPerson*100)/100;
         // print statements and format
         System.out.println();
-        System.out.println("Total Tip: $" + roundedTotalTip);
+        System.out.println("Total Tip: $" + df.format(roundedTotalTip));
         System.out.println("Total Bill Including Tip: $" + totalBillWithTip);
         System.out.println("Tip Per Person: $" + roundedTipPerPerson);
-        System.out.println("Total Bill Per Person: $" + totalBillPerPerson);
-        System.out.println(roundedBillPerPerson);
+        System.out.println("Total Bill Per Person: $" + roundedBillPerPerson);
+
+
 
     }
 }
