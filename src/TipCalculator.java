@@ -1,11 +1,11 @@
-import java.util.Scanner;
 import java.text.DecimalFormat;
+import java.util.Scanner;
 public class TipCalculator {
     public static final DecimalFormat df = new DecimalFormat("0.00");
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         // user input variables
-        System.out.print("What is the total bill: $ ");
+        System.out.print("What is the total bill: $");
         float totalBill = s.nextFloat();
         System.out.print("What tip percentage do you want to give: ");
         int tipPercentage = s.nextInt();
@@ -23,9 +23,9 @@ public class TipCalculator {
         // print statements and format
         System.out.println();
         System.out.println("Total Tip: $" + df.format(roundedTotalTip));
-        System.out.println("Total Bill Including Tip: $" + totalBillWithTip);
-        System.out.println("Tip Per Person: $" + roundedTipPerPerson);
-        System.out.println("Total Bill Per Person: $" + roundedBillPerPerson);
+        System.out.println("Total Bill Including Tip: $" + df.format(totalBillWithTip));
+        System.out.println("Tip Per Person: $" + df.format(roundedTipPerPerson));
+        System.out.println("Total Bill Per Person: $" + df.format(roundedBillPerPerson));
 
 
 
